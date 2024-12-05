@@ -20,11 +20,16 @@ const ListPokemons = () => {
     return (
         <>
         <Header />
-        <div>
-            <h1>La liste des Pokémons</h1>
+        <h1>La liste des Pokémons</h1>
+        <h2>Génération 3</h2>
+        <div className="pokemon-list">
             {pokemons.map((pokemon) => {
                 return (
-                    <PokemonCard key={pokemon.id} pokemon={pokemon} />
+                    <>
+                    <div className="pokemon-card">
+                        <PokemonCard key={pokemon.id} pokemon={pokemon} />
+                    </div>
+                    </>
                 )
             })}
         </div>
