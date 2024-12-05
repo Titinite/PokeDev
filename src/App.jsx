@@ -4,6 +4,8 @@ import Home from './pages/Home'
 import ListPokemons from './pages/ListPokemons'
 import RandomPokemon from './pages/RandomPokemon';
 import SearchResult from './pages/SearchResult';
+import ListTypes from './pages/ListTypes';
+
 
 function App() {
   return (
@@ -11,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/pokemons" element={<ListPokemons />} />
+        <Route path="/types" element={<ListTypes />} />
         <Route path="/random-pokemon" element={<RandomPokemon />} />
         <Route path="/search-result" element={<SearchResult />} />
       </Routes>

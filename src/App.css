@@ -98,3 +98,18 @@ article > p {
       grid-template-columns: 1fr;
   }
 }
+
+.types-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100vw;
+  overflow-x: hidden; 
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.types-card {
+  width: 100%;
+  height: auto; 
+}

@@ -18,7 +18,8 @@ const Header = () => {
         <ul>
             <li><h2 id="name-header">PokéDev</h2></li>
             <li><Link to={"/"}><img src="src/assets/pokeball.png" alt="PokeBall" id="logo-header" /></Link></li>
-            <li><Link to={"/pokemons"}>Liste</Link></li>
+            <li><Link to={"/pokemons"}>Pokémons</Link></li>
+            <li><Link to={"/types"}>Types</Link></li>
             <li><Link to={"/random-pokemon"}>Aléatoire</Link></li>
             <li>
                 <form method="get" onSubmit={handleSubmitSearch}>
