@@ -1,19 +1,29 @@
 import './Header.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate} from 'react-router-dom'
 
 const Header = () => {
+
+  const navigate = useNavigate();
+
+  const handleSubmitSearch = (event) => {
+    event.preventDefault();
+    const searchQuery = event.target.elements.query.value;
+    navigate("/search-result?query=" + searchQuery);
+  }
+
 
   return (
     <header>
       <nav>
         <ul>
-            <li><Link to={"/"}><h2 id="name-header">Accueil</h2></Link></li>
+            <li><h2 id="name-header">PokéDev</h2></li>
             <li><Link to={"/"}><img src="src/assets/pokeball.png" alt="PokeBall" id="logo-header" /></Link></li>
             <li><Link to={"/pokemons"}>Liste</Link></li>
+            <li><Link to={"/random-pokemon"}>Aléatoire</Link></li>
             <li>
-                <form action="">
-                    <input type="text" placeholder="Rechercher" />
-                    <input type="submit" value="Rechercher" />
+                <form method="get" onSubmit={handleSubmitSearch}>
+                    <input type="text" name="query" placeholder="Rechercher" />
+                    <input type="submit" value="➜" />
                 </form>
             </li>
             
