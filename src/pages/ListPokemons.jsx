@@ -5,9 +5,9 @@ import useGetPokemonsByGen from '../hooks/useGetPokemonsByGen'
 
 const ListPokemons = () => {
 
-    const { pokemons } = useGetPokemonsByGen();
+    const { pokemons, generation } = useGetPokemonsByGen();
 
-    if (!pokemons) {
+    if (!pokemons || generation === 0) {
         return (
             <>
             <Header />
@@ -21,7 +21,7 @@ const ListPokemons = () => {
         <>
         <Header />
         <h1>La liste des Pokémons</h1>
-        <h2>Génération 3</h2>
+        <h2>Génération {generation}</h2>
         <div className="pokemon-list">
             {pokemons.map((pokemon) => {
                 return (
