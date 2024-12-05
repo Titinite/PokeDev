@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-const useGetPokemonsByGen = () => {
+const useGetPokemonsByGen = (genParam) => {
     const [pokemons, setPokemons] = useState([]);
-    const [generation, setGeneration] = useState(1);
+    const [generation, setGeneration] = useState(genParam);
 
     useEffect(() => {
         fetch("https://pokebuildapi.fr/api/v1/pokemon/generation/" + generation)
@@ -12,7 +12,7 @@ const useGetPokemonsByGen = () => {
             .then((data) => {
                 setPokemons(data)
             })
-    }, []);
+    }, [generation]);
 
     return { pokemons, generation };
 }

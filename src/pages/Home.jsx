@@ -1,15 +1,18 @@
 import Header from '../components/header/Header'
 import Footer from '../components/Footer'
 import useGetRandomPokemons from '../hooks/useGetRandomPokemons'
+import useGetRandomTypes from '../hooks/useGetRandomTypes'
 import PokemonCard from '../components/PokemonCard';
+import TypeCard from '../components/TypeCard';
 import './Home.css'
 import { Link } from 'react-router-dom';
 
 const Home = () => {
 
   const { pokemons } = useGetRandomPokemons()
+  const { randomTypes } = useGetRandomTypes()
 
-  if (!pokemons) {
+  if (!pokemons || !randomTypes) {
     return <p>Chargement...</p>
   }
 
@@ -24,9 +27,24 @@ const Home = () => {
           {pokemons.map((pokemon) => {
               return (
                   <>
-                  <div className="pokemon-card">
+                  <div className="pokemon-card" key={pokemon.id}>
                     <Link to={"/pokemon/" + pokemon.id}>
                       <PokemonCard key={pokemon.id} pokemon={pokemon} />
+                    </Link>
+                  </div>
+                  </>
+              )
+          })}
+      </div>
+
+      <h2><Link to={"/types"}>Mes Types aléatoires</Link></h2>
+      <div className="types-list">
+          {randomTypes.map((type) => {
+              return (
+                  <>
+                  <div className="types-card" key={type.id}>
+                    <Link to={"/type/" + type.name}>
+                      <TypeCard key={type.id} type={type} />
                     </Link>
                   </div>
                   </>
