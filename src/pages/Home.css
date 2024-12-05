@@ -1,0 +1,15 @@
+#pokemon-list-home {
+    grid-template-columns: repeat(3, 1fr);
+}
+  
+@media (max-width: 1200px) {
+    #pokemon-list-home {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+  
+@media (max-width: 768px) {
+    #pokemon-list-home {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
