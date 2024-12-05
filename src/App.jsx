@@ -6,6 +6,7 @@ import RandomPokemon from './pages/RandomPokemon';
 import SearchResult from './pages/SearchResult';
 import ListTypes from './pages/ListTypes';
 import ListPokemonsByType from './pages/ListPokemonsByType';
+import PokemonDetails from './pages/PokemonDetails';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/pokemons" element={<ListPokemons />} />
+        <Route path="/pokemon/:id" element={<PokemonDetails />} />
         <Route path="/types" element={<ListTypes />} />
         <Route path="/type/:typeName" element={<ListPokemonsByType />} />
         <Route path="/random-pokemon" element={<RandomPokemon />} />
