@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useFight from "../hooks/useFight";
 import { useParams } from "react-router-dom";
 import useGetPokemonById from "../hooks/useGetPokemonById";
@@ -11,22 +11,32 @@ const FightGame = () => {
 
     const step = useFight();
     const { idPokemon } = useParams();
-    const { pokemon } = useGetPokemonById(idPokemon);
+    const { pokemon: myPokemon } = useGetPokemonById(idPokemon);
     const { pokemon: ennemyPokemon } = useGetRandomPokemon();
 
-    let egality = false;
-    let winner = null;
+    const [egality, setEgality] = useState(false);
+    const [winner, setWinner] = useState(null);
 
-    if (pokemon.stats.attack >= ennemyPokemon.stats.HP) {
-        winner = pokemon;
-    } else if (ennemyPokemon.stats.attack >= pokemon.stats.HP) {
-        winner = ennemyPokemon;
-    } else if (pokemon.stats.attack > ennemyPokemon.stats.attack) {
-        winner = pokemon;
-    } else if (ennemyPokemon.stats.attack >= pokemon.stats.attack) {
-        winner = ennemyPokemon;
-    } else {
-        egality = true;
+    useEffect(() => {
+        if (myPokemon && ennemyPokemon) {
+            console.log(ennemyPokemon)
+            if (myPokemon.stats.attack >= ennemyPokemon.stats.HP) {
+                setWinner(myPokemon);
+            } else if (ennemyPokemon.stats.attack >= myPokemon.stats.HP) {
+                setWinner(ennemyPokemon);
+            } else if (myPokemon.stats.attack > ennemyPokemon.stats.attack) {
+                setWinner(myPokemon);
+            } else if (ennemyPokemon.stats.attack >= myPokemon.stats.attack) {
+                setWinner(ennemyPokemon);
+            } else {
+                setEgality(true);
+            }
+        }
+    }, [myPokemon, ennemyPokemon]);
+
+
+    if (!myPokemon || !ennemyPokemon) {
+        return <p>Chargement...</p>;
     }
 
 
@@ -48,16 +58,16 @@ const FightGame = () => {
                 </>
             )}
         </div>
-        <div className="pokemon-card">
-            {step === 0 && <PokemonDetailsCard pokemon={pokemon}/>}
+        <div className={`pokemon-card ${step === 2 ? "step-2" : ""}`}>
+            {step === 0 && <PokemonDetailsCard pokemon={myPokemon}/>}
             {step === 1 && <PokemonDetailsCard pokemon={ennemyPokemon}/>}
             {step === 2 && 
                 <>
-                    <PokemonDetailsCard pokemon={pokemon} />
+                    <PokemonDetailsCard pokemon={myPokemon} />
                     <PokemonDetailsCard pokemon={ennemyPokemon} />
                 </>
             }
-            {step === 3 && <PokemonDetailsCard pokemon={pokemon}/>}
+            {step === 3 && <PokemonDetailsCard pokemon={winner}/>}
         </div>
         <Footer />
         </>

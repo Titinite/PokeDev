@@ -12,7 +12,7 @@ const useFight = () => {
       } else if (step === 2) {
         setStep(3);
       }
-    }, 5000);
+    }, 8000);
 
     return () => clearTimeout(timer);
   }, [step]);
