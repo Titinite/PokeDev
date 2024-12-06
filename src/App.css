@@ -81,6 +81,16 @@ article > p {
   height: auto; 
 }
 
+.links-home {
+  text-decoration: none;
+  color: #dbdbdb;
+  transition: color 300ms ease;
+}
+
+.links-home:hover {
+  color: white;
+}
+
 @media (max-width: 1200px) {
   .pokemon-list {
       grid-template-columns: repeat(3, 1fr);

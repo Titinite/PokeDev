@@ -1,6 +1,7 @@
 import Header from '../components/header/Header'
 import Footer from '../components/Footer'
 import useGetPokemonById from '../hooks/useGetPokemonById'
+import PokemonDetailsCard from '../components/PokemonDetailsCard'
 
 const PokemonDetails = () => {
 
@@ -20,13 +21,7 @@ const PokemonDetails = () => {
         <>
         <Header />
         <div>
-            <h1>{pokemon.name}</h1>
-            <p>Pokédex : {pokemon.pokedexId}</p>
-            <p>Type : {pokemon.apiTypes[0].name}</p>
-            <p>HP : {pokemon.stats.HP}</p>
-            <p>Attack : {pokemon.stats.attack}</p>
-            <p>Defense : {pokemon.stats.defense}</p>
-            <img src={pokemon.image} alt={pokemon.name} />
+            <PokemonDetailsCard pokemon={pokemon} />
         </div>
         <Footer />
         </>

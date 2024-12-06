@@ -85,19 +85,20 @@ header > nav > ul > li > a:hover::after {
 form {
     display: flex;
     align-items: center;
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 2rem;
 }
   
 input[type="text"] {
     padding: 0.5rem;
     border-radius: 2rem 0 0 2rem;
+    color: white;
 }
   
   input[type="submit"] {
     padding: 0.5rem;
     border-radius: 0 2rem 2rem 0;
-    background-color: #0060ce;
+    background-color: #FF0000;
     color: white;
     cursor: pointer;
 }

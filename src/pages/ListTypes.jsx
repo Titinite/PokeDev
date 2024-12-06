@@ -27,7 +27,7 @@ const ListTypes = () => {
                 return (
                     <>
                     <div className="types-card" key={type.id}>
-                        <Link to={"/type/" + type.name}>
+                        <Link to={"/type/" + type.name} className="links-home">
                             <TypeCard key={type.id} type={type} />
                         </Link>
                     </div>

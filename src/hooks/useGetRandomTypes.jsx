@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 const useGetRandomTypes = () => {
-    const [types, setTypes] = useState([]);
     const [randomTypes, setRandomTypes] = useState([]);
 
     useEffect(() => {
@@ -10,15 +9,9 @@ const useGetRandomTypes = () => {
                 return response.json()
             })
             .then((data) => {
-                setTypes(data)
+                const shuffled = data.sort(() => 0.5 - Math.random());
+                setRandomTypes(shuffled.slice(0, 3));
             })
-
-        const getRandomTypes = () => {
-            const shuffled = types.sort(() => 0.5 - Math.random());
-            return shuffled.slice(0, 3);
-        };
-
-        setRandomTypes(getRandomTypes());
     }, []);
     
     return { randomTypes };

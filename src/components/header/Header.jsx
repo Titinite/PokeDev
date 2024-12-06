@@ -21,6 +21,7 @@ const Header = () => {
             <li><Link to={"/pokemons"}>Pokémons</Link></li>
             <li><Link to={"/types"}>Types</Link></li>
             <li><Link to={"/random-pokemon"}>Aléatoire</Link></li>
+            <li><Link to={"/fight"}>Combat</Link></li>
             <li>
                 <form method="get" onSubmit={handleSubmitSearch}>
                     <input type="text" name="query" placeholder="Rechercher" />

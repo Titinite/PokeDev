@@ -1,4 +1,9 @@
 const PokemonDetailsCard = ({ pokemon }) => {
+
+    if (!pokemon) {
+        return <p>Chargement...</p>
+    }
+
     return (
         <article key={pokemon.id}>
             <h2>{pokemon.name}</h2>

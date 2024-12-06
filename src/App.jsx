@@ -7,6 +7,7 @@ import SearchResult from './pages/SearchResult';
 import ListTypes from './pages/ListTypes';
 import ListPokemonsByType from './pages/ListPokemonsByType';
 import PokemonDetails from './pages/PokemonDetails';
+import Fight from './pages/Fight';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/types" element={<ListTypes />} />
         <Route path="/type/:typeName" element={<ListPokemonsByType />} />
         <Route path="/random-pokemon" element={<RandomPokemon />} />
+        <Route path="/fight" element={<Fight />} />
         <Route path="/search-result" element={<SearchResult />} />
       </Routes>
     </BrowserRouter>
