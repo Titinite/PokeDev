@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 
-const useGetPokemonById = () => {
-    const [pokemon, setPokemon] = useState([]);
-    const { id } = useParams();
+const useGetPokemonById = (id) => {
+    const [pokemon, setPokemon] = useState();
 
     useEffect(() => {
     fetch("https://pokebuildapi.fr/api/v1/pokemon/" + id)

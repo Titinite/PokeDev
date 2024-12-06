@@ -1,3 +1,4 @@
+import { useParams } from 'react-router-dom'
 import Header from '../components/header/Header'
 import Footer from '../components/Footer'
 import useGetPokemonById from '../hooks/useGetPokemonById'
@@ -5,7 +6,8 @@ import PokemonDetailsCard from '../components/PokemonDetailsCard'
 
 const PokemonDetails = () => {
 
-    const { pokemon } = useGetPokemonById();
+    const { id } = useParams();
+    const { pokemon } = useGetPokemonById(id);
 
     if (!pokemon) {
         return (

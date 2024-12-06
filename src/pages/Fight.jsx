@@ -2,10 +2,18 @@ import Header from "../components/header/Header";
 import Footer from "../components/Footer";
 import useGetTypes from "../hooks/useGetTypes";
 import './Fight.css'
+import { useRef } from "react";
 
 const Fight = () => {
 
     const { types } = useGetTypes();
+    const selectRef = useRef(null);
+
+    const handleButtonClick = (event) => {
+        event.preventDefault();
+        console.log(selectRef.current.value);
+    }
+
 
     if (!types) {
         return (
@@ -22,8 +30,8 @@ const Fight = () => {
         <Header />
         <h1>Combat</h1>
         <form id="type-selector" action="">
-            <label for="pokemon-1">Sélectionnez un Type</label>
-            <select>
+            <label>Sélectionnez un Type</label>
+            <select ref={selectRef}>
                 {types.map((type) => {
                     return (
                         <>
@@ -32,7 +40,7 @@ const Fight = () => {
                     )
                 })}
             </select>
-            <button>Combat</button>
+            <button onClick={handleButtonClick}>Combat</button>
         </form>
         <Footer />
         </>

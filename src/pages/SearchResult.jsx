@@ -21,21 +21,11 @@ const SearchResult = () => {
         )
     }
 
-    if (!pokemon) {
+    if (!isLoading && !pokemon) {
         return (
             <>
             <Header />
             <p>Le Pokémon n'existe pas !</p>
-            <Footer />
-            </>
-        )
-    }
-
-    if (!query) {
-        return (
-            <>
-            <Header />
-            <p>Veuillez entrer un nom de Pokémon !</p>
             <Footer />
             </>
         )
