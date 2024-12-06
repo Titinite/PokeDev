@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-const useGetPokemonByType = () => {
+const useGetPokemonByType = (type) => {
     const [pokemons, setPokemons] = useState([]);
-    const { typeName } = useParams();
+    let { typeName } = useParams();
+
+    if (!typeName) {
+        typeName = type;
+    }
 
     useEffect(() => {
         fetch("https://pokebuildapi.fr/api/v1/pokemon/type/" + typeName)
@@ -13,7 +17,7 @@ const useGetPokemonByType = () => {
             .then((data) => {
                 setPokemons(data)
             })
-    }, []);
+    }, [typeName]);
 
     return { pokemons, typeName };
 }

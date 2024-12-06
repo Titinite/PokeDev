@@ -17,14 +17,7 @@ const useFight = () => {
     return () => clearTimeout(timer);
   }, [step]);
 
-  return (
-    <div>
-        <h2>Mon combat</h2>
-        {step === 1 && <p>Un Pokémon apparait !</p>}
-        {step === 2 && <p>Le combat commence !</p>}
-        {step === 3 && <p>Vous avez gagné le combat !</p>}
-    </div>
-  );
+  return step;
 };
 
 export default useFight;
