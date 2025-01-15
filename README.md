@@ -6,10 +6,8 @@ Mon petit projet est une application web qui simule une sorte de petit jeu Poké
 ## Table des Matières
 1. [Fonctionnalités](#fonctionnalités)
 2. [Installation](#installation)
-3. [Utilisation](#utilisation)
-4. [Structure du Projet](#structure-du-projet)
-5. [Technologies](#technologies)
-6. [Auteurs](#auteurs)
+3. [Technologies](#technologies)
+4. [Auteurs](#auteurs)
 
 
 ## Fonctionnalités
