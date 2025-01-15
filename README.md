@@ -32,28 +32,9 @@ Mon petit projet est une application web qui simule une sorte de petit jeu Poké
    ```
 
 
-## Utilisation
+## Technologie
 
-- **Page d'Accueil** (`index.php`) : Liste tous les événements et permet l'accès aux fonctions d'ajout, édition et suppression.
-- **Ajout d’un Événement** : Remplissez un formulaire pour enregistrer un nouvel événement.
-- **Header et Footer** : Éléments récurrents dans l’interface pour une navigation simplifiée.
-
-
-## Structure du Projet
-
-- **index.php** : Page principale affichant tous les événements et les boutons d'interaction.
-- **add_event.php** : Formulaire pour ajouter un événement.
-- **edit_event.php** : Permet de modifier un événement existant.
-- **delete_event.php** : Supprime un événement sélectionné.
-- **data.php** : Fichier de configuration de la base de données et fonctions.
-- **style.css** : Feuille de style pour l’apparence de l’interface.
-
-
-## Technologies
-
-- **React** : Gestion des opérations et interactions serveur.
-- **SQL** : Stockage des informations d'événements.
-- **HTML/CSS** : Interface utilisateur simple et fonctionnelle.
+- **React.js**
 
 
 ## Auteurs
